@@ -18,3 +18,7 @@ document.addEventListener("scroll", () => {
     navbar.classList.remove("navbar--dark");
   }
 });
+
+// my work
+// c72. remove selection from the previous item and select the next selection
+
