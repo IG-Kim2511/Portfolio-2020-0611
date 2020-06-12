@@ -524,11 +524,11 @@ p {
 .contact__links {
   font-size: var(--font-large);
   margin: 24px 0;
-  transition: all var(--animation_1s_duration) ease-in;
 }
 .contact__links i:hover {
   color: var(--color-blue);
   transform: scale(1.3);
+  transition: all var(--animation_duration) ease-in;
 }
 
 /* scroll arrow up */
