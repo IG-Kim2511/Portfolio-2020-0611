@@ -2,9 +2,9 @@
 
 //js refresh page every 2 seconds (완성 이후 지우기)
 
-setTimeout(function () {
-  window.location.reload(1);
-}, 2000);
+// setTimeout(function () {
+//   window.location.reload(1);
+// }, 2000);
 
 // c58. make navbar transparent when it is on the top
 
@@ -22,3 +22,11 @@ document.addEventListener("scroll", () => {
 // my work
 // c72. remove selection from the previous item and select the next selection
 
+// c74
+const toggleBtn = document.querySelector(".navbar__toggle-btn");
+
+const navbarMenu = document.querySelector(".navbar__menu");
+
+toggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+});
