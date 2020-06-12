@@ -4,7 +4,7 @@
 
 setTimeout(function () {
   window.location.reload(1);
-}, 8000);
+}, 3000);
 
 // c58. make navbar transparent when it is on the top
 
