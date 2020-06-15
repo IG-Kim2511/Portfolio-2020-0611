@@ -188,6 +188,7 @@ p {
 }
 
 /*home  */
+
 #home {
   padding: 40px;
   padding-top: 120px;
@@ -547,10 +548,14 @@ p {
   border-radius: 50%;
 
   /* display: none; */
+  opacity: 0;
+  transition: all var(--animation_duration) ease-in;
+  pointer-events: none;
 }
 
 /*js. visible */
 .arrow-up.visible {
+  /* display: block; */
   opacity: 1;
   pointer-events: auto;
 }

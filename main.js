@@ -70,6 +70,67 @@ function scrollIntoView(selector) {
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }
 
+// make home slowly fad to transparent as the window scrolls down
+// <오답노트>
+// home.getBoundingClientRect().height;
+// const home = document.querySelector("#home");
+// const homeHeight = home.offsetheight;
+//   home.style.opacity = 1 - window.scrollY / homeHeight;
+
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// show "arrow up" button when scrolling down
+
+const arrowUp = document.querySelector(".arrow-up");
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+//click arrow up and move to 'home'
+// <오답노트> scrollIntoView
+
+// const arrowUp = document.querySelector(".arrow-up");
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
+// 68 project
+
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workBtnContainer.addEventListener("click", (e) => {
+  // 68-1
+
+  const filter = e.target.dataset.filter;
+
+  if (filter == null) {
+    return;
+  }
+  // 68-2 forEach
+
+  projects.forEach((project) => {
+    console.log(project.dataset.type);
+
+    if (filter === "*" || filter == "project.dataset.type") {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+});
+
 // my work
 // c72. remove selection from the previous item and select the next selection
 
