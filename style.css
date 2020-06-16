@@ -378,7 +378,7 @@ p {
 }
 
 /* .js72 */
-.category__btn:selected,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-orange);
   color: var(--color-strong-orange);

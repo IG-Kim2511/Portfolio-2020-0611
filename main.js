@@ -104,7 +104,8 @@ arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
-// 68 project
+// 68 project 
+//span부분은 코딩안함
 
 const workBtnContainer = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");
@@ -123,20 +124,29 @@ workBtnContainer.addEventListener("click", (e) => {
   projects.forEach((project) => {
     console.log(project.dataset.type);
 
-    if (filter === "*" || filter == "project.dataset.type") {
+    if (filter === "*" ||filter == project.dataset.type) {
       project.classList.remove("invisible");
     } else {
       project.classList.add("invisible");
     }
   });
+
+  // (70) project 화면전환 애니메이션 &  300ms 후 초기화
+  projectContainer.classList.add('anim-out');
+
+  setTimeout(() => {
+    projectContainer.classList.remove('anim-out');
+
+  }, 300);
+
+  // (72) 현재 클릭된곳으로 버튼효과 옮겨가기
+  //  Remove selection from the previous item and select the next selection
+
+  const active = document.querySelector('.category__btn.selected');
+  
+  if(active !=null){
+    active.classList.remove('selected');
+   }
+e.target.classList.add('selected');
+  
 });
-
-// my work
-// c72. remove selection from the previous item and select the next selection
-
-// // c74
-// const toggleBtn = document.querySelector(".navbar__toggle-btn");
-
-// toggleBtn.addEventListener("click", () => {
-//   navbarMenu.classList.toggle("open");
-// });
