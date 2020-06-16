@@ -113,7 +113,6 @@ const projects = document.querySelectorAll(".project");
 
 workBtnContainer.addEventListener("click", (e) => {
   // 68-1
-
   const filter = e.target.dataset.filter;
 
   if (filter == null) {
